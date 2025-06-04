@@ -14,7 +14,7 @@
         }
         header {
             background-color: #333;
-            color: white;
+            color: #fff;
             text-align: center;
             padding: 20px;
         }
@@ -30,6 +30,14 @@
             font-size: 1em;
             color: #ddd;
             margin-top: 10px;
+        }
+        .author-info {
+            font-size: 1.2em;
+            color: #f0f0f0;
+        }
+        .author-info sup {
+            font-size: 0.8em;
+            color: #88aaff;
         }
         section {
             margin: 20px;
@@ -101,17 +109,21 @@
 <body>
 
 <header>
-    <div class="image-container">
-        <img src="dimension-old.png" alt="Head Image" /> <!-- Replace with the correct path for the image -->
-    </div>
     <h1>Video-Bench: Human-Aligned Video Generation Benchmark</h1>
-    <p>by Hui Han, Siyuan Li, Jiaqi Chen, Yiwen Yuan, Yuling Wu, Chak Tou Leong, Hanwen Du, Junchen Fu, Youhua Li, Jie Zhang, Chi Zhang, Li-jia Li, Yongxin Ni</p>
+    <h2>CVPR 2024 Highlight</h2>
+    <div class="author-info">
+        <p>by <strong>Hui Han<sup>1</sup>, Siyuan Li<sup>1</sup>, Jiaqi Chen<sup>2,3,4</sup>, Yiwen Yuan<sup>5</sup>, Yuling Wu<sup>6</sup>, Chak Tou Leong<sup>5</sup>, Hanwen Du<sup>7</sup>, Junchen Fu<sup>8</sup>, Youhua Li<sup>9</sup>, Jie Zhang<sup>4</sup>, Chi Zhang<sup>10</sup>, Li-jia Li<sup>11</sup>, Yongxin Ni<sup>12</sup></strong></p>
+    </div>
     <div class="affiliations">
         <p>1. Shanghai Jiao Tong University, 2. Stanford University, 3. Fellou AI, 4. Fudan University, 5. Carnegie Mellon University, 6. Hong Kong Polytechnic University, 7. Soochow University, 8. University of Glasgow, 9. City University of Hong Kong, 10. Westlake University, 11. LiveX AI, 12. National University of Singapore</p>
     </div>
 </header>
 
 <section>
+    <div class="image-container">
+        <img src="head_image.png" alt="Head Image" /> <!-- Ensure this is the correct path to your image -->
+    </div>
+
     <h2>Project Overview</h2>
     <p>Video generation assessment is critical for ensuring generative models produce visually realistic, high-quality videos aligned with human expectations. Current video generation benchmarks are limited in aligning with human judgment. To address this, <strong>Video-Bench</strong> is introduced—a comprehensive benchmark incorporating large language models (LLMs) to evaluate video generation quality. The framework includes automated multimodal LLM evaluation, improving the alignment with human preferences. Experimental results show that Video-Bench significantly outperforms previous methods and provides more objective and accurate insights into generated video quality.</p>
 
