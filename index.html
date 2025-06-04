@@ -5,29 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video-Bench: Human-Aligned Video Generation Benchmark</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file for styling, if needed -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
+            background-color: #333;
+            color: white;
             text-align: center;
+            padding: 20px;
         }
         header h1 {
+            font-size: 2.5em;
             margin: 0;
         }
+        header h2 {
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
         section {
-            padding: 20px;
             margin: 20px;
+            padding: 20px;
             background-color: white;
             border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
             color: #333;
@@ -50,23 +54,13 @@
         a:hover {
             text-decoration: underline;
         }
-        .video-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .image-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .table-container {
+            margin: 20px 0;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -78,145 +72,145 @@
         th {
             background-color: #f4f4f4;
         }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Video-Bench: Human-Aligned Video Generation Benchmark</h1>
+    <h2>CVPR 2024 Highlight</h2>
+    <p>by Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuhao Wang, and others</p>
 </header>
 
 <section>
-    <h2>Authors</h2>
-    <p><strong>Hui Han</strong>, <strong>Siyuan Li</strong>, <strong>Jiaqi Chen</strong>, <strong>Yiwen Yuan</strong>, <strong>Yuling Wu</strong>, <strong>Chak Tou Leong</strong>, <strong>Hanwen Du</strong>, <strong>Junchen Fu</strong>, <strong>Youhua Li</strong>, <strong>Jie Zhang</strong>, <strong>Chi Zhang</strong>, <strong>Li-jia Li</strong>, <strong>Yongxin Ni</strong></p>
-
-    <h2>Affiliations</h2>
-    <ul>
-        <li>Shanghai Jiao Tong University</li>
-        <li>Stanford University</li>
-        <li>Fellou AI</li>
-        <li>Fudan University</li>
-        <li>Carnegie Mellon University</li>
-        <li>Hong Kong Polytechnic University</li>
-        <li>Soochow University</li>
-        <li>University of Glasgow</li>
-        <li>City University of Hong Kong</li>
-        <li>Westlake University</li>
-        <li>LiveX AI</li>
-        <li>National University of Singapore</li>
-    </ul>
-
     <h2>Project Overview</h2>
     <p>Video generation assessment is critical for ensuring generative models produce visually realistic, high-quality videos aligned with human expectations. Current video generation benchmarks are limited in aligning with human judgment. To address this, <strong>Video-Bench</strong> is introduced—a comprehensive benchmark incorporating large language models (LLMs) to evaluate video generation quality. The framework includes automated multimodal LLM evaluation, improving the alignment with human preferences. Experimental results show that Video-Bench significantly outperforms previous methods and provides more objective and accurate insights into generated video quality.</p>
 
     <h2>Main Results</h2>
 
     <h3>Comparison with Existing Evaluation Methods</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Video Quality</th>
-                <th>Video-Condition Alignment</th>
-                <th>Overall</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Gen3</td>
-                <td>4.66</td>
-                <td>4.38</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>CogVideoX</td>
-                <td>3.87</td>
-                <td>4.62</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>VideoCrafter2</td>
-                <td>4.08</td>
-                <td>4.18</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Kling</td>
-                <td>4.26</td>
-                <td>4.07</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Show-1</td>
-                <td>3.30</td>
-                <td>4.21</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>LaVie</td>
-                <td>3.00</td>
-                <td>3.71</td>
-                <td>6</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>Human Preference Alignment Scores</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Dimension</th>
-                <th>Video-Condition Alignment</th>
-                <th>Video Quality</th>
-                <th>Average Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Imaging Quality</td>
-                <td>0.733</td>
-                <td>0.633</td>
-                <td>0.733</td>
-            </tr>
-            <tr>
-                <td>Aesthetic Quality</td>
-                <td>0.702</td>
-                <td>0.446</td>
-                <td>0.702</td>
-            </tr>
-            <tr>
-                <td>Motion Quality</td>
-                <td>0.514</td>
-                <td>0.469</td>
-                <td>0.514</td>
-            </tr>
-            <tr>
-                <td>Video-Text Consistency</td>
-                <td>0.732</td>
-                <td>0.611</td>
-                <td>0.732</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="video-container">
-        <h2>Project Video Demonstration</h2>
-        <p>Check out the project’s demonstration video on YouTube:</p>
-        <a href="https://youtu.be/BMvgyWbWPFg" target="_blank">
-            <img src="https://img.youtube.com/vi/BMvgyWbWPFg/0.jpg" alt="Video Thumbnail" style="width:100%; border-radius: 8px;">
-        </a>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Video Quality</th>
+                    <th>Video-Condition Alignment</th>
+                    <th>Overall Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gen3</td>
+                    <td>4.66</td>
+                    <td>4.38</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>CogVideoX</td>
+                    <td>3.84</td>
+                    <td>4.62</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>VideoCrafter2</td>
+                    <td>4.08</td>
+                    <td>4.18</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Kling</td>
+                    <td>4.26</td>
+                    <td>4.07</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Show-1</td>
+                    <td>3.30</td>
+                    <td>4.21</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>LaVie</td>
+                    <td>3.00</td>
+                    <td>3.71</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>PiKa-Beta</td>
+                    <td>3.76</td>
+                    <td>2.60</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
+    <h3>Human Preference Alignment Scores</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Entities</th>
+                    <th>Video Quality</th>
+                    <th>Video-Condition Alignment</th>
+                    <th>Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HU - HU</td>
+                    <td>0.63</td>
+                    <td>0.47</td>
+                    <td>0.52</td>
+                </tr>
+                <tr>
+                    <td>HU - GPT</td>
+                    <td>0.51</td>
+                    <td>0.47</td>
+                    <td>0.41</td>
+                </tr>
+                <tr>
+                    <td>HU - HA</td>
+                    <td>0.61</td>
+                    <td>0.50</td>
+                    <td>0.50</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Project Video Demonstration</h2>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/BMvgyWbWPFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Head Image</h2>
     <div class="image-container">
-        <h2>Paper's Head Image</h2>
-        <img src="YOUR_IMAGE_URL_HERE" alt="Project Image" /> <!-- Replace this URL with the actual image URL -->
+        <img src="dimension_v2.pdf" alt="Head Image" />
     </div>
 
     <h2>GitHub Repository</h2>
     <p>For more details, visit the official repository: <a href="https://github.com/Video-Bench/Video-Bench.git" target="_blank">Video-Bench GitHub Repository</a></p>
-
-    <h2>Conclusion</h2>
-    <p>The Video-Bench benchmark introduces a new paradigm for evaluating video generation models with enhanced alignment to human preferences. Through rigorous experimentation and human alignment studies, Video-Bench demonstrates its potential to become a standard evaluation tool for video generation models.</p>
 
 </section>
 
